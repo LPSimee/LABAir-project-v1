@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrello - LABair</title>
+    <link rel="icon" type="image/x-icon" href="MATERIALE/Logo/logo.png"> <!-- Icona sul tab del sito -->
+    <link rel="stylesheet" href="stili/foglio.css">
+    <link href="https://db.onlinewebfonts.com/c/a8d7b985e4eb8c5d34f2302ffe83e917?family=Nike+Futura+ND" rel="stylesheet"> <!-- Font per titoli grossi della Nike -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="script/carrello.js"></script>
+</head>
+<body>
+    <!-- Parte mini Header -->
+    <div id="mini-header" class="padding-principale">
+        <!-- Parte dei mini loghi -->
+        <div id="mini-logo" class="contenitore-mini">
+        <!-- La grandezza dei loghi Jordan e Converse sono di 24x24px -->
+        <ul>
+            <li><a href="#"><img src="MATERIALE/Logo/svg/logo-jordan-piccolo.svg" alt="Logo del sito Jordan"></a></li>
+            <li><a href="#"><img src="MATERIALE/Logo/svg/logo-converse-piccolo.svg" alt="Logo del sito Converse"></a></li>
+        </ul>       
+        </div>
+
+        <!-- Parte delle mini voci -->
+        <nav class="contenitore-mini">
+        <ul>
+            <li><a href="#">Trova un negozio</a><div class="linea-verticale"></div></li>
+            <li> 
+                <a href="#">Aiuto</a>
+                <!-- Mini voci ancora -->
+                <div class="contenitore-mini-voci"><div class="margini-voci-header">
+                    <a href="#" class="titolo-voci"><p>Aiuto</p></a>
+                    <ul> 
+                        <li><a href="#"><p>Stato ordine</p></a></li>
+                        <li><a href="#"><p>Spedizione e consegna</p></a></li>
+                        <li><a href="#"><p>Restituzioni</p></a></li>
+                        <li><a href="#"><p>Tabelle delle taglie e delle misure</p></a></li>
+                        <li><a href="#"><p>Contattaci</p></a></li>
+                        <li><a href="#"><p>Informazioni sulla privacy</p></a></li>
+                        <li><a href="#"><p>Condizioni di vendita</p></a></li>
+                        <li><a href="#"><p>Condizioni d'uso</p></a></li>
+                        <li><a href="#"><p>Invia feedback</p></a></li>
+                    </ul>
+                </div></div>
+                <div class="linea-verticale"></div>
+            </li>  
+            <li><a href="#">Unisciti a noi</a><div class="linea-verticale"></div></li>  
+            <li><a href="#">Accedi</a></li>
+        </ul>
+        </nav>
+    </div>
+
+    <!-- Parte header -->
+    <div id="grande-header" class="padding-principale"> 
+        <!-- Logo Nike -->
+        <div id="logoNike"><a href="homepage.html"><img src="MATERIALE/Logo/logo.png" alt="Logo del sito Nike"></a></div>
+        
+        <!-- Voci Header -->
+        <div id="header-nav">
+        <ul> 
+            <li><div class="voce-grande-header"><a class="link-voce-header" href="#">Novità e in evidenza</a>
+                <div class="contenitore-voci-header">
+
+                <!-- Voci "Novità" -->
+                <div class="voce-header novita">
+                
+                <div class="margini-voci-header">
+                    <a href="#" class="titolo-voci"><p>In evidenza</p></a>
+
+                    <ul>
+                    <li><a href="#"><p>Tutti i nuovi arrivi</p></a></li>
+                    <li><a href="#"><p>Best seller</p></a></li>
+                    <li><a href="#"><p>Calendario dei lanci SNKRS</p></a></li>
+                    </ul>
+                </div>
+    
+                <div class="margini-voci-header">
+
+                    <a href="#" class="titolo-voci"><p>Scorpi le icone</p></a>
+                    <ul>
+                    <li><a href="#"><p>Air Force 1</p></a></li>
+                    <li><a href="#"><p>Air Jordan 1</p></a></li>
+                    <li><a href="#"><p>Air Max</p></a></li>
+                    <li><a href="#"><p>Dunk</p></a></li>
+                    <li><a href="#"><p>Blazer</p></a></li>
+                    <li><a href="#"><p>Pegasus</p></a></li>
+                    <li><a href="#"><p>Mercurial</p></a></li>
+                </ul>
+                </div>
+            
+                <div class="margini-voci-header">
+
+                    <a href="#" class="titolo-voci"><p>Jordan</p></a>
+
+                    <ul>
+                    <li><a href="#"><p>Tutto l'abbigliamento</p></a></li>
+                    <li><a href="#"><p>Felpe</p></a></li>
+                    <li><a href="#"><p>Giacche</p></a></li>
+                    <li><a href="#"><p>Pantaloni e tights</p></a></li>
+                    <li><a href="#"><p>Tute</p></a></li>
+                    <li><a href="#"><p>Maglie e t-shirts</p></a></li>
+                    <li><a href="#"><p>Shorts</p></a></li>
+                    <li><a href="#"><p>Divise e maglie</p></a></li>
+                </ul>
+                </div>
+            
+                <div class="margini-voci-header">
+
+                    <a href="#" class="titolo-voci"><p>Scopri lo sport</p></a>
+
+                    <ul>
+                    <li><a href="#"><p>Calcio</p></a></li>
+                    <li><a href="#"><p>Running</p></a></li>
+                    <li><a href="#"><p>Basket</p></a></li>
+                    <li><a href="#"><p>Fitness</p></a></li>
+                    <li><a href="#"><p>Golf</p></a></li>
+                    <li><a href="#"><p>Tennis</p></a></li>
+                    <li><a href="#"><p>Yoga</p></a></li>
+                    <li><a href="#"><p>Danza</p></a></li>
+                    <li><a href="#"><p>Skateboard</p></a></li>
+                </ul>
+                </div>
+
+                </div><!-- voce-header novità -->
+                </div><!-- contenitore-voci-header -->
+            </div></li>
+            <li><div class="voce-grande-header"><a class="link-voce-header" href="#">Uomo</a>
+                <div class="contenitore-voci-header">
+                    <!-- Voci "Uomo" -->
+                    <div class="voce-header uomo">
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>In evidenza</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Novità</p></a></li>
+                            <li><a href="#"><p>Best seller</p></a></li>
+                            <li><a href="#"><p>Sneaker Y2K</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Scarpe</p></a>
+                            <ul>
+                            <li><a href="#"><p>Tutte le scarpe</p></a></li>
+                            <li><a href="#"><p>Lifestyle</p></a></li>
+                            <li><a href="#"><p>Jordan</p></a></li>
+                            <li><a href="#"><p>Running</p></a></li>
+                            <li><a href="#"><p>Calcio</p></a></li>
+                            <li><a href="#"><p>Basket</p></a></li>
+                            <li><a href="#"><p>Fitness e training</p></a></li>
+                            <li><a href="#"><p>Skateboard</p></a></li>
+                            <li><a href="#"><p>Nike By You</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Abbigliamento</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Tutto l'abbigliamento</p></a></li>
+                            <li><a href="#"><p>Felpe</p></a></li>
+                            <li><a href="#"><p>Giacche</p></a></li>
+                            <li><a href="#"><p>Pantaloni e tights</p></a></li>
+                            <li><a href="#"><p>Tute</p></a></li>
+                            <li><a href="#"><p>Maglie e t-shirts</p></a></li>
+                            <li><a href="#"><p>Shorts</p></a></li>
+                            <li><a href="#"><p>Divise e maglie</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Scopri lo sport</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Running</p></a></li>
+                            <li><a href="#"><p>Calcio</p></a></li>
+                            <li><a href="#"><p>Basket</p></a></li>
+                            <li><a href="#"><p>Fitness e training</p></a></li>
+                            <li><a href="#"><p>Tennis</p></a></li>
+                            <li><a href="#"><p>Golf</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Accessori</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Tutti gli accessori</p></a></li>
+                            <li><a href="#"><p>Borse e zaini</p></a></li>
+                            <li><a href="#"><p>Copricapi</p></a></li>
+                            <li><a href="#"><p>Calze</p></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- voci-header uomo -->
+                </div>
+            </div></li>
+            <li><div class="voce-grande-header"><a class="link-voce-header" href="#">Donna</a>
+                <div class="contenitore-voci-header">
+                    <!-- Voci "Donna" -->
+                    <div class="voce-header donna">
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>In evidenza</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Novità</p></a></li>
+                            <li><a href="#"><p>Best seller</p></a></li>
+                            <li><a href="#"><p>Nike Style By</p></a></li>
+                            <li><a href="#"><p>Sneaker Y2K</p></a></li>
+                            <li><a href="#"><p>Teenager</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Scarpe</p></a>
+                            <ul>
+                            <li><a href="#"><p>Tutte le scarpe</p></a></li>
+                            <li><a href="#"><p>Lifestyle</p></a></li>
+                            <li><a href="#"><p>Jordan</p></a></li>
+                            <li><a href="#"><p>Running</p></a></li>
+                            <li><a href="#"><p>Fitness e training</p></a></li>
+                            <li><a href="#"><p>Calcio</p></a></li>
+                            <li><a href="#"><p>Nike By You</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Abbigliamento</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Tutto l'abbigliamento</p></a></li>
+                            <li><a href="#"><p>Felpe</p></a></li>
+                            <li><a href="#"><p>Giacche</p></a></li>
+                            <li><a href="#"><p>Pantaloni</p></a></li>
+                            <li><a href="#"><p>Leggings</p></a></li>
+                            <li><a href="#"><p>Set coordinati</p></a></li>
+                            <li><a href="#"><p>Maglie e t-shirts</p></a></li>
+                            <li><a href="#"><p>Shorts</p></a></li>
+                            <li><a href="#"><p>Reggiseni sportivi</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Scopri lo sport</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Fitness</p></a></li>
+                            <li><a href="#"><p>Running</p></a></li>
+                            <li><a href="#"><p>Calcio</p></a></li>
+                            <li><a href="#"><p>Basket</p></a></li>
+                            <li><a href="#"><p>Tennis</p></a></li>
+                            <li><a href="#"><p>Danza</p></a></li>
+                            <li><a href="#"><p>Yoga</p></a></li>
+                            <li><a href="#"><p>Golf</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Accessori</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Tutti gli accessori</p></a></li>
+                            <li><a href="#"><p>Borse e zaini</p></a></li>
+                            <li><a href="#"><p>Copricapi</p></a></li>
+                            <li><a href="#"><p>Calze</p></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- voce-header donna -->
+                </div>
+            </div></li>
+            <li><div class="voce-grande-header"><a class="link-voce-header" href="#">Kids</a>
+                <div class="contenitore-voci-header">
+                    <!-- Voci "Kids" -->
+                    <div class="voce-header kids">
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>In evidenza</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Novità</p></a></li>
+                            <li><a href="#"><p>Best seller</p></a></li>
+                            <li><a href="#"><p>Teenager</p></a></li>
+                            <li><a href="#"><p>EasyOn</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Scarpe</p></a>
+                            <ul>
+                            <li><a href="#"><p>Tutte le scarpe</p></a></li>
+                            <li><a href="#"><p>Lifestyle</p></a></li>
+                            <li><a href="#"><p>Jordan</p></a></li>
+                            <li><a href="#"><p>Calcio</p></a></li>
+                            <li><a href="#"><p>Running</p></a></li>
+                            <li><a href="#"><p>Basket</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Abbigliamento</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Tutto l'abbigliamento</p></a></li>
+                            <li><a href="#"><p>Felpe</p></a></li>
+                            <li><a href="#"><p>Giacche</p></a></li>
+                            <li><a href="#"><p>Pantaloni e leggings</p></a></li>
+                            <li><a href="#"><p>Tute</p></a></li>
+                            <li><a href="#"><p>Set coordinati</p></a></li>
+                            <li><a href="#"><p>Maglie e t-shirts</p></a></li>
+                            <li><a href="#"><p>Shorts</p></a></li>
+                            <li><a href="#"><p>Divise e maglie</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Kids per età</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Ragazzo/a (7-15 anni)</p></a></li>
+                            <li><a href="#"><p>Bambino/a (3-7 anni)</p></a></li>
+                            <li><a href="#"><p>Bebè e bimbo/a (0-3 anni)</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Accessori</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Tutti gli accessori</p></a></li>
+                            <li><a href="#"><p>Borse e zaini</p></a></li>
+                            <li><a href="#"><p>Copricapi</p></a></li>
+                            <li><a href="#"><p>Calze</p></a></li>
+                            </ul>
+                        </div>
+                    </div> <!-- voci-header kids -->
+                </div>
+            </div></li>
+            <li><div class="voce-grande-header"><a class="link-voce-header" href="#">Outlet</a>
+                <div class="contenitore-voci-header">
+                    <!-- Voci "Outlet" -->
+                    <div class="voce-header outlet">
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Offerte</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Tutte le offerte</p></a></li>
+                            <li><a href="#"><p>Best seller</p></a></li>
+                            <li><a href="#"><p>Ultima occasione</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Outlet - Uomo</p></a>
+                            <ul>
+                            <li><a href="#"><p>Tutti gli articoli Outlet - Uomo</p></a></li>
+                            <li><a href="#"><p>Scarpe</p></a></li>
+                            <li><a href="#"><p>Abbigliamento</p></a></li>
+                            <li><a href="#"><p>Accessori</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Outlet - Donna</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Tutti gli articoli Outlet - Donna</p></a></li>
+                            <li><a href="#"><p>Scarpe</p></a></li>
+                            <li><a href="#"><p>Abbigliamento</p></a></li>
+                            <li><a href="#"><p>Accessori</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Outlet - Kids</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Tutti gli articoli Outlet - kids</p></a></li>
+                            <li><a href="#"><p>Scarpe</p></a></li>
+                            <li><a href="#"><p>Abbigliamento</p></a></li>
+                            <li><a href="#"><p>Accessori</p></a></li>
+                            </ul>
+                        </div>
+                    
+                        <div class="margini-voci-header">
+
+                            <a href="#" class="titolo-voci"><p>Outlet per sport</p></a>
+                        
+                            <ul>
+                            <li><a href="#"><p>Running</p></a></li>
+                            <li><a href="#"><p>Calcio</p></a></li>
+                            <li><a href="#"><p>Fitness e training</p></a></li>
+                            <li><a href="#"><p>Basket</p></a></li>
+                            <li><a href="#"><p>Tennis</p></a></li>
+                            <li><a href="#"><p>Golf</p></a></li>
+                            <li><a href="#"><p>Yoga</p></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div></li>
+        </ul>
+        </div>
+
+        <!-- Parte della barra di ricerca -->
+        <div id="header-buttons">
+            <!-- Bottone Cerca -->
+            <div id="sezione-cerca">
+                <button class="bottone-header bottone-cerca"><img src="MATERIALE/Icon/svg/cerca.svg" alt=""></button>
+                <input type="text" class="search" placeholder="Cerca">
+            </div>
+
+
+            <!-- Bottone preferiti e carrello -->
+            <div id="contenitore-cerca">    
+                <a class="bottone-header" href="#" title="Preferiti"><img src="MATERIALE/Icon/svg/cuore.svg" alt=""></a>
+                <a class="bottone-header" id="btn-carrello" href="carrello.html" title="Articoli carrello: 1"><img src="MATERIALE/Icon/svg/carrello.svg" alt=""><span id="numero-carrello"></span></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="blur"></div> <!-- Per oscurare la pagina -->
+
+    <main class="contenitore-main-carrello">  
+        <div class="contenitore-main-content">
+            <div class="content-carrello">
+                <!-- Dettagli carrello -->
+                <div class="contenitore-dettagli-carrello">
+                    <!-- Spedizione gratuita per i member -->
+                    <div class="contenitore-spedizione font-1">
+                        <h2 class="titolo-spedizione">Spedizione gratuita per i Member</h2>
+                        Diventa Member Nike e approfitta della spedizione rapida e gratuita.
+                        <a class="link-spedizione" href="#">Unisciti a noi</a> o <a class="link-spedizione" href="#">Accedi</a>
+                    </div>
+
+                    <!-- Dettagli del prodotto -->
+                    <h1 class="titolo-carrello">Carrello</h1>
+
+                    <!-- Contenitore contenenti i dati della scarpa -->
+                    <div class="contenitore-dati-carrello">
+                        <div class="carrello-img-testo">
+                            <div class="contenitore-img-carrello">
+                            <img src="MATERIALE/Scarpa/4.jpg" alt="Immagine della scarpa selezionata">
+                            </div>
+                            <div class="contenitore-testo-carrello">
+                                    <div class="dati-carrello">
+                                        <a href="scarpa.html">Nike Dunk Low Retro</a>
+                                        <div class="testo-carrello font-1">Scarpa - Uomo</div>
+                                        <div class="testo-carrello font-1">Bianco/Nero</div>
+                                        <div class="testo-carrello font-1">Taglia/misura <a class="link-spedizione taglia-regalo font-1" href="#">41</a></div>    
+                                        <div class="testo-carrello font-1"><a class="link-spedizione taglia-regalo font-1" href="#">Opzioni regalo</a></div>
+                                    </div>
+
+                                    <div id="prezzo-calcolato">119,99 €</div><!-- Prezzo della scarpa che si trova a destra -->
+                            </div>
+                        </div>
+
+                        <!-- Bottoni del carrello -->
+                        <div class="contenitore-bottoni-carrello">
+                            <div class="contenitore-btn-prezzo">
+                                <!-- Bottone "Elimina" o "Diminuisci" n. scarpe -->
+                                <button id="btn-rimuovi-elemento" class="bottone-prezzo bottone-header"><img src="MATERIALE/Icon/svg/cestino.svg" alt=""></button>
+                                
+                                <!-- Numero scarpe-->
+                                <div id="numero-scarpe">1</div> 
+
+                                <!-- Bottone "Aggiungi" scarpa -->
+                                <button id="btn-aggiungi-elemento" class="bottone-prezzo bottone-header"><img src="MATERIALE/Icon/svg/aggiungi.svg" alt=""></button>
+                                
+                            
+                            </div>
+                            
+                            <!-- Bottone "Preferiti" -->
+                            <button class="bottone-prezzo preferiti bottone-header"><img src="MATERIALE/Icon/svg/cuore.svg" alt=""></button>
+                        </div>
+                        
+                        <!-- Da modificare -->
+                        <div class="testo-ritiro">
+                            <p>Ritiro gratuito</p>
+                                <!-- Mettilo come link forse è meglio -->
+                            
+                            <div>
+                                <a href="#" class="negozio">Trova un negozio</a>
+                            </div>
+                            
+                        </div>
+
+                    </div>
+
+                    <div id="no-item">Nel tuo carrello non sono presenti articoli.</div>
+                </div>
+                <!-- Riepilogo carrelo -->
+                <div class="riepilogo-carrello">
+                    <div class="content-riepilogo">
+                        <h2 class="titolo-riepilogo">Riepilogo</h2>
+                        <div class="testo-riepilogo"><h4>Hai un codice promozionale?</h3> <div><img src="MATERIALE/Icon/svg/freccia-giu.svg" alt=""><!-- img --></div></div>
+                        <div class="testo-riepilogo">
+                            <p class="font-1 contenitore-img-domanda">Subtotale <img src="MATERIALE/Icon/svg/domanda-nero.svg" alt=""></p> <div></div>
+                            <div id="subtotale"><p class="font-1">119,99 €</p></div>
+                        </div>
+                        <div class="testo-riepilogo costi">
+                            <div><p class="font-1">Costi di spedizione e gestione previsti</p></div>
+                            <div><p class="font-1">Gratis</p></div>
+                        </div>
+                    </div>
+                    <div class="totale">
+                        <p>Totale</p>
+                        <span id="prezzo-totale"><p>119,99€</p></span>
+                    </div>
+                    
+                    <div class="contenitore-bottoni-riepilogo">
+                        <button class=" bottone-grande grande carrello">Vai al pagamento</button>
+                        <button class="bottone-grande grande pagamento"><img class="img-paypal" src="MATERIALE/Icon/png/paypal.png" alt=""></button>
+                    </div>
+                </div>
+
+                <!-- Piccola parte Preferiti -->
+                <div class="preferiti-carrello">
+                    <h2 class="titolo-preferiti">Preferiti</h2>
+                    <p>Vuoi visualizzare i preferiti? <a class="link-spedizione" href="#">Unisciti a noi</a> o <a class="link-spedizione" href="#">Accedi</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 1110px -->
+    </main>
+    <footer>
+        <div class="linea-footer"></div>  
+        <div class="menu-footer">
+            <div>
+                <a class="titolo-colonna-menu-footer" href="#"><p>Risorse</p></a><!-- Titolo link footer -->
+                <div>
+                <a href="#"><p>Gift Card</p></a>
+                <a href="#"><p>Gift card aziendali</p></a>
+                <a href="#"><p>Trova un negozio</p></a>
+                <a href="#"><p>Nike Journal</p></a>
+                <a href="#"><p>Diventa un member</p></a>
+                <a href="#"><p>Sconto studenti</p></a>
+                <a href="#"><p>Feedback</p></a>
+                <a href="#"><p>Codici promozionali</p></a>
+                </div>
+            </div>
+           
+            <div>
+                <a class="titolo-colonna-menu-footer" href="#"><p>Assistenza</p></a><!-- Titolo link footer -->
+                <div>
+                <a href="#"><p>Hai bisogno di aiuto?</p></a>
+                <a href="#"><p>Stato ordine</p></a>
+                <a href="#"><p>Spedizione e consegna</p></a>
+                <a href="#"><p>Resi</p></a>
+                <a href="#"><p>Opzioni di pagamento</p></a>
+                <a href="#"><p>Contattaci</p></a>
+                <a href="#"><p>Recensioni</p></a>
+                <a href="#"><p>Assistenza Codici promozionali Nike</p></a>
+                </div>
+            </div>
+
+
+            <div>
+                <a class="titolo-colonna-menu-footer" href="#"><p>Azienda</p></a><!-- Titolo link footer -->
+                <div>
+                <a href="#"><p>Informazioni su Nike</p></a>
+                <a href="#"><p>News</p></a>
+                <a href="#"><p>Lavora con noi</p></a>
+                <a href="#"><p>Investitori</p></a>
+                <a href="#"><p>Sostenibilità</p></a>
+                <a href="#"><p>Obiettivo</p></a>
+                <a href="#"><p>Segnala un problema</p></a>
+                </div>
+            </div>
+            <div id="contenitore-bottone-lingua"><button class="bottone-lingua"><span><img class="img-grigio" src="MATERIALE/Icon/svg/mondo.svg" alt=""></span>Italia</button></div>
+        </div>  
+        <div class="super-footer">
+            <ul>
+                <li><p>© 2025 Nike, Inc. Tutti i diritti riservati</p></li>
+                <li><a href="#"><p>Guide</p></a></li>
+                <li><a href="#"><p>Condizioni d'uso</p></a></li>
+                <li><a href="#"><p>Condizioni di vendita</p></a></li>
+                <li><a href="#"><p>Info Legali e Societarie</p></a></li>
+                <li><a href="#"><p>Informativa sulla privacy e sui cookie</p></a></li>
+                <li><a href="#"><p>Impostazioni sulla Privacy e sui Cookie</p></a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>

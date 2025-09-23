@@ -1,0 +1,307 @@
+// // Script principale
+
+const vociHeader = $("li .voce-grande-header a"); // Voci <li> di #header-nav
+let cvociHeader = $(".contenitore-voci-header"); // Contenitore delle minivoci degli <li>
+
+
+// Per il blur
+$(".voce-grande-header").hover(()=>{
+    $(".blur").css({
+        "opacity":1,
+        "z-index":10,
+        "height":"100%"
+    });
+})
+
+$(".voce-grande-header").mouseleave(()=>{
+    $(".blur").css({
+        "opacity":0,
+        "z-index":-1,
+        "height":0
+    });
+})
+
+/* 
+const sliderArray = Array.from(slider); // Ho notato che con il forEach slider non funziona, quindi la converto in un array con il metodo Array.from()
+$(bottoniDestra[i]).click(() => {
+        if (sl.scrollLeft >= (maxScrollWidth - tolleranza)) {
+            bottoniDestra[i].disabled = true;
+        } else {
+            bottoniDestra[i].disabled = false;
+            let passo;
+            if(i==0){
+                passo = maxScrollWidth / 7;
+            } else if(i==1){
+                passo = maxScrollWidth / 5;
+            } else if(i==2){
+                passo = maxScrollWidth / 3;
+            } else sl.scrollLeft += 300;
+
+            sl.scrollLeft += passo + tolleranza;
+
+            // Se lo slider ha superato la fine, correggi il valore (in caso di arrotondamenti)
+            if (sl.scrollLeft >= maxScrollWidth - tolleranza) {
+                sl.scrollLeft = maxScrollWidth;
+                bottoniDestra[i].disabled = true;
+            }
+        }
+    }); */
+
+/* Parte delle voci dell'header sticky */
+let lastScrollTop = 0; // posizione precedente dello scroll
+
+$(window).scroll(()=>{
+    // console.log("scroll");
+    
+    if($(window).scrollTop() > 100){
+        /* Far funzionare la header sticky */
+        cvociHeader.css(
+            {
+                "position" : "fixed",
+                "top" : "0"
+                
+            }
+        );
+    } else{
+        // $("#grande-header").fadeIn(); 
+        $("#grande-header").css({
+                
+                "display":"grid",
+                
+                
+                "position":"relative"
+    
+            });
+        cvociHeader.css(
+            {
+                "position" : "absolute",
+                "top" : "100%",
+            }
+        );
+    }
+
+      // Aggiorna la posizione dello scroll
+//   lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+})
+
+
+// Gestion comparsa popup Carello
+const bottoneCarrello = document.querySelector("#bottone");
+let nScarpeSelezionate = 0;
+let timer;
+bottoneCarrello.addEventListener("click", ()=>{
+    // console.log("CIAO");
+    let tagliaCheck = document.querySelector(".mini-taglia input[type=radio]:checked");
+    if(tagliaCheck == null){
+        document.querySelector(".taglie-misure").style.border = "1px solid red";
+        document.querySelector(".taglia-misura span").style.color = "red";
+        document.querySelector("#no-scarpa").innerHTML = "Selezionare una scarpa";
+
+    } else {
+        nScarpeSelezionate++;
+        document.querySelector("#btn-carrello").setAttribute("title", "Articoli carrello: " + nScarpeSelezionate);
+        console.log(document.querySelector("#btn-carrello").getAttribute("title"))
+        document.querySelector(".taglie-misure").style.border = "none";
+        document.querySelector(".taglia-misura span").style.color = "black";
+        document.querySelector("#no-scarpa").innerHTML = "";
+        timer = setTimeout(rimuoviPopup, 10000)
+        window.scrollTo(0,0)
+        document.body.style.overflow = 'hidden'; // Blocca lo scroll sulla pagina
+        document.documentElement.style.overflow = 'hidden'; // Blocca lo scroll sulla pagina (per alcuni browser)
+
+        // console.log(tagliaCheck.value);
+        document.querySelector(".blur").style.opacity = 1;
+        document.querySelector(".blur").style.zIndex = 20;
+        document.querySelector(".blur").style.height = "100%";
+        document.querySelector("#popup-carrello").style.opacity = 1;
+        document.querySelector("#popup-carrello").style.zIndex = 110;
+        document.querySelector("#ntaglia").innerHTML = "Taglia/ Misura EU " + tagliaCheck.value;
+        document.querySelector("#numero-carrello").innerHTML = nScarpeSelezionate;
+        document.querySelector(".bottone-grande.preferiti.popup").innerHTML = "Visualizza Carrello ("+nScarpeSelezionate+")";
+    }
+});
+
+document.querySelector("#btn-mini-esci").addEventListener("click", ()=>{
+    document.querySelector(".blur").style.opacity = 0;
+    document.querySelector(".blur").style.zIndex = -1;
+    document.querySelector(".blur").style.height = "0";
+    document.querySelector("#popup-carrello").style.opacity = 0;
+    document.querySelector("#popup-carrello").style.zIndex = -1;
+    document.body.style.overflow = ''; // Blocca lo scroll sulla pagina
+    document.documentElement.style.overflow = ''; // Blocca lo scroll sulla pagina (per alcuni browser)
+})
+
+document.querySelector("#popup-carrello").addEventListener("mouseleave", ()=>{
+    console.log("mouseleave")
+    timer = setTimeout(rimuoviPopup, 10000);
+});
+
+document.querySelector("#popup-carrello").addEventListener("mouseover", ()=>{
+    console.log("hover")
+    clearTimeout(timer);
+});
+
+function rimuoviPopup(){
+    document.querySelector(".blur").style.opacity = 0;
+    document.querySelector(".blur").style.zIndex = -1;
+    document.querySelector(".blur").style.height = "0";
+    document.querySelector("#popup-carrello").style.opacity = 0;
+    document.querySelector("#popup-carrello").style.zIndex = -1;
+    document.body.style.overflow = ''; // Blocca lo scroll sulla pagina
+    document.documentElement.style.overflow = ''; // Blocca lo scroll sulla pagina (per alcuni browser)
+}
+
+
+document.querySelector(".bottone-grande.preferiti.popup").addEventListener("click", ()=>{
+    location.href = "carrello.html";
+})
+
+// Gestione bottoni slider
+const slider = document.querySelectorAll(".slider ul");
+const bottoniSinistra = document.querySelectorAll(".bottone-slider.sinistra");
+const bottoniDestra = document.querySelectorAll(".bottone-slider.destra");
+console.log("Slider" , slider);
+
+slider.forEach((sl, i) => {
+    // maxScrollWidth equivale alla vera width dello slider in questione
+    let maxScrollWidth = sl.scrollWidth - sl.clientWidth;
+    const tolleranza = 2; // In base al browser la funzione del tasto destro può non funzionare rendendo impossibile farlo diventare disabled. Una piccola tolleranza dovrebbe risolvere il problema
+
+    // console.log('scrollWidth:', sl.scrollWidth);
+    // console.log('clientWidth:', sl.clientWidth);
+    // console.log('maxScrollWidth:', maxScrollWidth);
+
+    // Gestione scorrimento dello scrollbar
+    sl.addEventListener("scroll", () => {
+        if (sl.scrollLeft == 0) {
+            bottoniSinistra[i].disabled = true;
+        } else {
+            bottoniSinistra[i].disabled = false;
+        }
+
+        if (parseInt(sl.scrollLeft) == maxScrollWidth) {
+            bottoniDestra[i].disabled = true;
+        } else {
+            bottoniDestra[i].disabled = false;
+        }
+    });
+
+    // Gestione bottone sinistro dello slider
+    bottoniSinistra[i].addEventListener("click", () => {
+        // console.log("Tasto sinistro");
+        if (sl.scrollLeft == 0) {
+            bottoniSinistra[i].disabled = true;
+        } else {
+            bottoniSinistra[i].disabled = false;
+
+            /* Dato che con il forEach non è possibile utilizzare il return e il break, ho convertito lo switch-case con un semplice if-else */
+            let passo;
+            if(i==0){
+                passo = maxScrollWidth / 7;
+            } else if(i==1){
+                passo = (maxScrollWidth / 5);
+            } else if(i==2){
+                passo = maxScrollWidth / 3;
+            } else sl.scrollLeft -= 300;
+
+            sl.scrollLeft -= passo;
+        }
+    });
+
+    // Gestione bottone destro dello slider
+    bottoniDestra[i].addEventListener("click", () => {
+        // console.log("Tasto destro");
+        if (sl.scrollLeft >= (maxScrollWidth - tolleranza)) {
+            bottoniDestra[i].disabled = true;
+        } else {
+            bottoniDestra[i].disabled = false;
+            let passo;
+            if(i==0){
+                passo = maxScrollWidth / 7;
+            } else if(i==1){
+                passo = maxScrollWidth / 5;
+            } else if(i==2){
+                passo = maxScrollWidth / 3;
+            } else sl.scrollLeft += 300;
+
+            sl.scrollLeft += passo + tolleranza;
+
+            // Se lo slider ha superato la fine, correggi il valore (in caso di arrotondamenti)
+            if (sl.scrollLeft >= maxScrollWidth - tolleranza) {
+                sl.scrollLeft = maxScrollWidth;
+                bottoniDestra[i].disabled = true;
+            }
+        }
+    });
+}); // slider
+
+
+/* Parte gestione bottoni slider della scarpa su scarpa.html */
+const miniBottoni = $(".mini-bottone-slider");
+const miniBottoneSinistra = $(".mini-bottone-slider")[0];
+const miniBottoneDestra = $(".mini-bottone-slider")[1];
+let position = 0;
+console.log(miniBottoneSinistra, miniBottoneDestra)
+
+const sliderMiniImmagini = $(".mini-img-scarpa");
+// console.log(sliderMiniImmagini);
+console.log($("img.immagine-scarpa-grossa")[0].src);
+
+for(let i=0; i<sliderMiniImmagini.length; i++){
+    $(sliderMiniImmagini[i]).hover(()=>{
+        let source = sliderMiniImmagini[i].firstChild.src;
+
+        // console.log("Ao " + source)
+        $("img.immagine-scarpa-grossa")[0].src = source;
+        // console.log($(".mini-img-scarpa:nth-child("+(i+1)+") img").src);
+        // $("img.immagine-grossa")[0].src = $(".mini-img-scarpa:nth-child("+(i+1)+") img").src;
+        position = i;
+        // console.log(position);
+    });
+    // console.log(position);
+    /* Utilizzare le radio e le label con id penso */
+    
+}
+
+    $(miniBottoni[1]).click(()=>{
+        position = avanti(position);
+    });
+    
+    $(miniBottoni[0]).click(()=>{
+        position = dietro(position);
+    });
+
+
+function avanti(x){
+    console.log("Click destro");
+    
+    console.log(sliderMiniImmagini.length)
+
+    if(x >= (sliderMiniImmagini.length-1)){
+        x = 0;
+    } else {
+        // console.log("IMMAGINE ", sliderMiniImmagini[x+1].firstChild.src)
+        x++;
+    }
+    console.log(x);
+    $("img.immagine-scarpa-grossa")[0].src = sliderMiniImmagini[x].firstChild.src;
+    
+    return x;
+}
+
+function dietro(y){
+    console.log("Click sinistro");
+    
+    console.log(sliderMiniImmagini.length)
+
+    if(y == 0){
+        y = sliderMiniImmagini.length-1;
+    } else {
+        // console.log("IMMAGINE ", sliderMiniImmagini[x+1].firstChild.src)
+        y--;
+    }
+    console.log(y);
+    $("img.immagine-scarpa-grossa")[0].src = sliderMiniImmagini[y].firstChild.src;
+    
+    return y;
+}
