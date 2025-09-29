@@ -905,7 +905,8 @@ footer {
 }
 
 .contenitore-immagine-scarpa {
-    max-width: 100%;
+    width: 100%;
+    max-width: 540px;
     /* min-width: 455px;
     min-height:450px; */
     position: relative;
